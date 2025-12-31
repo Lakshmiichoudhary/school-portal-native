@@ -2,23 +2,29 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../screens/home/Header";
 import { LinearGradient } from "expo-linear-gradient";
 import Essentials from "../screens/home/Essentials";
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import MyWorkSpace from "../screens/home/MyWorkspace";
-
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import TopBar from "../screens/home/TopBar";
 
 export default function Index() {
-  const insets = useSafeAreaInsets();
-
   return (
-    <View style={[style.container, { paddingTop: insets.top }]}>
-      <Header />
-
-      <View style={style.otherSection}>
-        <Essentials />
-        <MyWorkSpace />
-      </View>
-    </View>
+    <LinearGradient
+      colors={["#E9EFFD", "#FFFFFF"]}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
+      style={{ flex: 1 }}
+    >
+      <SafeAreaView style={style.container} edges={["top"]}>
+        <TopBar />
+        <Header />
+        <ScrollView scrollsToTop>
+          <View style={style.otherSection}>
+            <Essentials />
+            <MyWorkSpace />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </LinearGradient>
   );
 }
 

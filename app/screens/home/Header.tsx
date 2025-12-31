@@ -17,7 +17,7 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 24,
+    padding: 24
   },
   header: {
     flexDirection: "row",
@@ -25,10 +25,12 @@ const styles = StyleSheet.create({
     gap: 16,
   },
   image: {
-    height: 60,
-    width: 60,
+    height: 62,
+    width: 62,
     borderRadius: 100,
     backgroundColor: "#000",
+    borderColor: "#2563EB",
+    borderWidth: 4
   },
   text: {
     fontSize: 20,

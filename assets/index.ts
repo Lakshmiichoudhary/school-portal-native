@@ -8,6 +8,9 @@ import messages from "./icons/messages.png"
 import bell from "./icons/bell.png"
 import workSpace from "./icons/workspace.png"
 import payment from "./icons/payment.svg"
+import login from "./images/login.png"
+import search from "./icons/search.png"
+import notification from "./icons/notification.svg"
 
 export {
     home,
@@ -19,5 +22,9 @@ export {
     messages,
     bell,
     workSpace,
-    payment
+    payment,
+    login,
+    search,
+    notification
+    
 }

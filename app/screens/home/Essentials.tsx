@@ -37,6 +37,7 @@ const Essentials = () => {
       <FlatList
         data={data}
         numColumns={3}
+        scrollEnabled={false}
         keyExtractor={(_, index) => index.toString()}
         columnWrapperStyle={style.column}
         contentContainerStyle={style.list}
