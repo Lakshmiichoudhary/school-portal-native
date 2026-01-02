@@ -1,22 +1,31 @@
-import { View, StyleSheet, Image, Text, FlatList } from "react-native";
+import { View, StyleSheet, Image, Text, FlatList, Pressable } from "react-native";
 import React from "react";
-import { messages, workSpace } from "@/assets";
+import {
+  assignedClasses,
+  classSchedule,
+  requestLeave,
+  workSpace,
+} from "@/assets";
 import SectionHeader from "@/components/SectionHeader";
+import { Link } from "expo-router";
 
 const data = [
   {
     label: "Assigned Classes",
-    icon: messages,
+    icon: assignedClasses,
+    route: "/workspace/assigned-classes",
   },
   {
-    label: "Group",
-    icon: messages,
+    label: "Class Schedule",
+    icon: classSchedule,
+    route: "/workspace/class-schedule",
   },
   {
-    label: "Subject",
-    icon: messages,
+    label: "Request Leave",
+    icon: requestLeave,
+    route: "/workspace/request-leave",
   },
-];
+] as const;
 
 const MyWorkSpace = () => {
   return (
@@ -30,10 +39,12 @@ const MyWorkSpace = () => {
         columnWrapperStyle={style.column}
         contentContainerStyle={style.list}
         renderItem={({ item }) => (
-          <View style={style.card}>
-            <Image source={item.icon} style={style.icon} />
-            <Text style={style.label}>{item.label}</Text>
-          </View>
+          <Link href={item.route}  asChild>
+            <Pressable style={style.card}>
+              <Image source={item.icon} style={style.icon} />
+              <Text style={style.label}>{item.label}</Text>
+            </Pressable>
+          </Link>
         )}
       />
     </View>
@@ -59,12 +70,15 @@ const style = StyleSheet.create({
   label: {
     fontSize: 14,
     color: "#666666",
+    textAlign: "center",
   },
   list: {
     marginTop: 20,
   },
   column: {
     marginBottom: 30,
+    flexDirection: "row",
+    columnGap: 20,
   },
   card: {
     flex: 1,

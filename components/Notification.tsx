@@ -1,12 +1,16 @@
-import { View, Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, Pressable } from "react-native";
 import React from "react";
 import { bell } from "@/assets";
+import { Link } from "expo-router";
 
 const Notification = () => {
+  
   return (
-    <View style={styles.container}>
+    <Link href="/notifications" asChild>
+    <Pressable style={styles.container}>
       <Image source={bell} style={styles.icon} resizeMode="contain" />
-    </View>
+    </Pressable>
+    </Link>
   );
 };
 

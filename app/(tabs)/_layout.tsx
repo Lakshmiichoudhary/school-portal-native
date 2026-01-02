@@ -1,6 +1,6 @@
 import React from "react";
 import { Tabs } from "expo-router";
-import { assignment, attendance, doubts, home, profile } from "../../assets"
+import { assignment, attendance, doubts, home, profile } from "../../assets";
 
 import { SvgProps } from "react-native-svg";
 
@@ -14,11 +14,11 @@ const TabIcon = ({ focused, icon: Icon }: TabIconProps) => {
     <Icon
       width={26}
       height={26}
-      fill={focused ? "#225AD6" : "#999"}
+      fill={focused ? "#225AD6" : "#666666"}
+      stroke={focused ? "#225AD6" : "#666666"}
     />
   );
 };
-
 
 const _layout = () => {
   return (

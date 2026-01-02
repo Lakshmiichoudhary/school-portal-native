@@ -1,17 +1,15 @@
-import { SafeAreaView } from "react-native-safe-area-context";
-import Header from "../screens/home/Header";
-import { LinearGradient } from "expo-linear-gradient";
-import Essentials from "../screens/home/Essentials";
+import { SafeAreaView } from "react-native-safe-area-context"
+import { LinearGradient } from "expo-linear-gradient"
 import { ScrollView, StyleSheet, View } from "react-native";
-import MyWorkSpace from "../screens/home/MyWorkspace";
-import TopBar from "../screens/home/TopBar";
 import Notification from "@/components/Notification";
 import ProfileHeader from "../screens/profile/ProfileHeader";
+import Cards from "../screens/profile/Cards";
+import ProfileActions from "../screens/profile/ProfileActions";
 
 export default function Profile() {
   return (
     <LinearGradient
-      colors={["#E9EFFD", "#FFFFFF"]}
+      colors={["#E9EFFD", "#FFFFFF","white"]}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 1 }}
       style={{ flex: 1 }}
@@ -23,6 +21,8 @@ export default function Profile() {
         <ScrollView scrollsToTop>
           <View style={style.otherSection}>
             <ProfileHeader />
+            <Cards />
+            <ProfileActions />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -40,6 +40,8 @@ const style = StyleSheet.create({
     paddingHorizontal: 24
   },
   otherSection: {
-    paddingHorizontal: 24
+    paddingHorizontal: 24,
+    flexDirection: "column",
+    gap: 24
   },
 });

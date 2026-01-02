@@ -1,6 +1,6 @@
 import { View, StyleSheet, Image, Text, FlatList } from "react-native";
 import React from "react";
-import { essentials, messages } from "@/assets";
+import { attendar, essentials, exam, gallary, group, messages, payment } from "@/assets";
 import SectionHeader from "@/components/SectionHeader";
 
 const data = [
@@ -10,23 +10,23 @@ const data = [
   },
   {
     label: "Fees/Payments",
-    icon: messages,
+    icon: payment,
   },
   {
-    label: "Media Galary",
-    icon: messages,
+    label: "Exams",
+    icon: exam,
   },
   {
-    label: "Messages/Alerts",
-    icon: messages,
+    label: "Media Gallery",
+    icon: gallary,
   },
   {
-    label: "Messages/Alerts",
-    icon: messages,
+    label: "Groups/Houses",
+    icon: group,
   },
   {
-    label: "Messages/Alerts",
-    icon: messages,
+    label: "Attendar",
+    icon: attendar,
   },
 ];
 
@@ -57,7 +57,7 @@ export default Essentials;
 const style = StyleSheet.create({
   container: {
     flexDirection: "column",
-    gap: 40,
+    gap: 16,
   },
   icon: {
     height: 40,
@@ -71,12 +71,15 @@ const style = StyleSheet.create({
   label: {
     fontSize: 14,
     color: "#666666",
+    textAlign: "center"
   },
   list: {
     marginTop: 20,
   },
   column: {
-    marginBottom: 30,
+   flexDirection: "row",
+   columnGap: 20,
+   marginVertical: 16,
   },
   card: {
     flex: 1,
