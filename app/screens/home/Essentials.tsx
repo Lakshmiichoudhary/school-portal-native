@@ -57,7 +57,7 @@ export default Essentials;
 const style = StyleSheet.create({
   container: {
     flexDirection: "column",
-    gap: 16,
+    gap: 12,
   },
   icon: {
     height: 40,
